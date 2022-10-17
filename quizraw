@@ -1,0 +1,1109 @@
+questions=[('EASY1',1,'Y'),('MEDIUM1',2,'Y'),('HARD1',3,'Y'),
+           ('EASY2',1,'Y'),('MEDIUM2',2,'Y'),('HARD2',3,'Y'),
+           ('EASY3',1,'Y'),('MEDIUM3',2,'Y'),('HARD3',3,'Y'),
+           ('EASY4',1,'Y'),('MEDIUM4',2,'Y'),('HARD4',3,'Y'),
+           ('EASY5',1,'Y'),('MEDIUM5',2,'Y'),('HARD5',3,'Y'),
+           ('EASY6',1,'Y'),('MEDIUM6',2,'Y'),('HARD6',3,'Y'),
+           ('EASY7',1,'Y'),('MEDIUM7',2,'Y'),('HARD7',3,'Y'),
+           ('EASY8',1,'Y'),('MEDIUM8',2,'Y'),('HARD8',3,'Y'),
+           ('EASY9',1,'Y'),('MEDIUM9',2,'Y'),('HARD9',3,'Y'),
+           ('EASY10',1,'Y'),('MEDIUM10',2,'Y'),('HARD10',3,'Y')]
+questions_attempted=[]
+random_elist=[]
+random_mlist=[]
+random_hlist=[]
+esy=[]
+med=[]
+hrd=[]
+user_score_e=[]
+user_score_m=[]
+user_score_h=[]
+for i in questions:
+    if i[1]==1:
+        esy.append([i[0]]+[i[2]])
+    elif i[1]==2:
+        med.append([i[0]]+[i[2]])
+    else:
+        hrd.append([i[0]]+[i[2]])
+from tkinter import *
+from random import *
+def easy(number):
+    def submite():
+        ans=easyv.get().upper()
+        questions_attempted[-1]+=[ans]
+        if ans==que[1]: 
+            user_score_e.append(1)
+            n.append(1)
+        else:
+            user_score_e.append(0)
+        win.destroy()
+    n=[0]
+    win=Tk()
+    win.title('QUIZ')
+    win.attributes('-fullscreen',True)
+    index=randint(0,9)
+    while index in random_elist:
+        index=randint(0,9)
+    que=esy[index]
+    random_elist.append(index)
+    questions_attempted.append(esy[index])
+    Label(win,text='QUESTION '+str(number)+".").pack(pady=20)
+    Label(win,text=que[0]).pack(pady=20)
+    easyv=StringVar()
+    Entry(win,textvariable=easyv).pack(pady=20)
+    Button(win,text='SUBMIT',command=submite).pack(pady=20)
+    win.mainloop()
+    return n[-1]
+def medium(number):
+    def submitm():
+        ans=mediumv.get().upper()
+        questions_attempted[-1]+=[ans]
+        if ans==que[1]: 
+            user_score_m.append(1)
+            n.append(1)
+        else:
+            user_score_m.append(0)
+        win.destroy()
+    n=[0]
+    win=Tk()
+    win.title('QUIZ')
+    win.attributes('-fullscreen',True)
+    index=randint(0,9)
+    while index in random_mlist:
+        index=randint(0,9)
+    que=med[index]
+    random_mlist.append(index)
+    questions_attempted.append(med[index])
+    Label(win,text='QUESTION '+str(number)+".").pack(pady=20)
+    Label(win,text=que[0]).pack(pady=20)
+    mediumv=StringVar()
+    Entry(win,textvariable=mediumv).pack(pady=20)
+    Button(win,text='SUBMIT',command=submitm).pack(pady=20)
+    win.mainloop()
+    return n[-1]
+def hard(number):
+    def submith():
+        ans=hardv.get().upper()
+        questions_attempted[-1]+=[ans]
+        if ans==que[1]:
+            user_score_h.append(1)
+            n.append(1)
+        else:
+            user_score_h.append(0)
+        win.destroy()
+    n=[0]
+    win=Tk()
+    win.title('QUIZ')
+    win.attributes('-fullscreen',True)
+    index=randint(0,9)
+    while index in random_hlist:
+        index=randint(0,9)
+    que=hrd[index]
+    random_hlist.append(index)
+    questions_attempted.append(hrd[index])
+    Label(win,text='QUESTION '+str(number)+".").pack(pady=20)
+    Label(win,text=que[0]).pack(pady=20)
+    hardv=StringVar()
+    Entry(win,textvariable=hardv).pack(pady=20)
+    Button(win,text='SUBMIT',command=submith).pack(pady=20)
+    win.mainloop()
+    return n[-1]
+def begin():
+    check.append(1)
+    win.destroy()
+check=[0]
+win=Tk()
+win.title('QUIZ')
+win.attributes('-fullscreen',True)
+win.attributes('-fullscreen',True)
+Label(win,text='QUIZ CANNOT BE EXITED ONCE STARTED.').pack(pady=20)
+Label(win,text='YOU CAN EXIT NOW IF YOU WANT TO.').pack(pady=20)
+Button(win,text='BEGIN',command=begin).pack(pady=20)
+Button(win,text='QUIT',command=win.destroy).pack(pady=20)
+win.mainloop()
+if check[-1]:
+    one=medium(1)
+    two=medium(2)
+    if one and two:
+        three=hard(3)
+        four=hard(4)
+        if three and four:
+            five=hard(5)
+            six=hard(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            else:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        elif three or four:
+            five=hard(5)
+            six=hard(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            else:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        else:
+            five=medium(5)
+            six=medium(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                elif seven or eight:
+                    nine=easy(9)
+                    ten=easy(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+    elif one or two:
+        three=medium(3)
+        four=medium(4)
+        if three and four:
+            five=hard(5)
+            six=hard(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            else:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        elif three or four:
+            five=medium(5)
+            six=medium(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                elif seven or eight:
+                    nine=easy(9)
+                    ten=easy(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        else:
+            five=easy(5)
+            six=easy(6)
+            if five and six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            elif five or six:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+    else:
+        three=easy(3)
+        four=easy(4)
+        if three and four:
+            five=medium(5)
+            six=medium(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        elif three or four:
+            five=easy(5)
+            six=easy(6)
+            if five and six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            elif five or six:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        else:
+            five=easy(5)
+            six=easy(6)
+            if five and six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            elif five or six:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+    win2=Tk()
+    win2.title('RESULT')
+    win2.attributes('-fullscreen',True)
+    Label(win2,text='THANKYOU FOR TAKING THIS QUIZ.\n\n\n YOUR RESULTS ARE AS FOLLOWS : ').pack(pady=20)
+    esyatt=0
+    medatt=0
+    hrdatt=0
+    esyc=0
+    medc=0
+    hrdc=0
+    esyi=0
+    medi=0
+    hrdi=0
+    for i in user_score_e:
+        esyatt+=1
+        if i:
+            esyc+=1
+        else:
+            esyi+=1
+    for i in user_score_m:
+        medatt+=1
+        if i:
+            medc+=1
+        else:
+            medi+=1
+    for i in user_score_h:
+        hrdatt+=1
+        if i:
+            hrdc+=1
+        else:
+            hrdi+=1
+    def analyse():
+        try:
+            win2.destroy()
+        except:
+            pass
+        lst_helper=[1]
+        win4=Tk()
+        win4.attributes('-fullscreen',True)
+        Label(win4,text='EASY ATTEMPTED : '+str(esyatt)).pack(pady=20)
+        Label(win4,text='EASY CORRECT : '+str(esyc)).pack(pady=20)
+        Label(win4,text='EASY INCORRECT : '+str(esyi)).pack(pady=20)
+        Label(win4,text='MEDIUM ATTEMPTED : '+str(medatt)).pack(pady=20)
+        Label(win4,text='MEDIUM CORRECT : '+str(medc)).pack(pady=20)
+        Label(win4,text='MEDIUM INCORRECT : '+str(medi)).pack(pady=20)
+        Label(win4,text='HARD ATTEMPTED : '+str(hrdatt)).pack(pady=20)
+        Label(win4,text='HARD CORRECT : '+str(hrdc)).pack(pady=20)
+        Label(win4,text='HARD INCORRECT : '+str(hrdi)).pack(pady=20)
+        Button(win4,text='QUESTIONWISE ANALYSIS',command=win4.destroy).pack(pady=20)
+        def analysemainquit():
+            win4.destroy()
+            lst_helper.append(0)
+        Button(win4,text='QUIT',command=analysemainquit).pack(pady=20)
+        win4.mainloop()
+        if lst_helper[-1]:
+            toquit=[1]
+            j=0
+            while j<len(questions_attempted) and toquit[-1]:
+                i=questions_attempted[j]
+                win=Tk()
+                win.title('PAPER ANALYSIS')
+                toquitl=[0]
+                win.attributes('-fullscreen',True)
+                num=j+1
+                Label(win,text='QUESTION '+str(num)+'.').pack(pady=20)
+                Label(win,text='QUESTION : ').pack(pady=20)
+                Label(win,text=i[0]).pack(pady=20)
+                Label(win,text='CORRECT ANSWER : ').pack(pady=20)
+                Label(win,text=i[1]).pack(pady=20)
+                Label(win,text='YOUR ANSWER : ').pack(pady=20)
+                Label(win,text=i[2]).pack(pady=20)
+                Button(win,text='NEXT',command=win.destroy).pack(pady=20)
+                def toquitf():
+                    win.destroy()
+                    toquit.append(0)
+                Button(win,text='QUIT',command=toquitf).pack(pady=20)
+                win.mainloop()
+                j+=1
+        try:
+            if toquit[-1]:
+                analyse()
+        except:
+            None
+    score=(1*esyc)+(2*medc)+(3*hrdc)
+    Label(win2,text='TOTAL SCORE : '+str(score)).pack(pady=20)
+    Button(win2,text='OK',command=win2.destroy).pack(pady=20)
+    Button(win2,text='PAPER ANALYSIS',command=analyse).pack(pady=20)
+    win2.mainloop()
+else:
+    passquestions=[('EASY1',1,'Y'),('MEDIUM1',2,'Y'),('HARD1',3,'Y'),
+           ('EASY2',1,'Y'),('MEDIUM2',2,'Y'),('HARD2',3,'Y'),
+           ('EASY3',1,'Y'),('MEDIUM3',2,'Y'),('HARD3',3,'Y'),
+           ('EASY4',1,'Y'),('MEDIUM4',2,'Y'),('HARD4',3,'Y'),
+           ('EASY5',1,'Y'),('MEDIUM5',2,'Y'),('HARD5',3,'Y'),
+           ('EASY6',1,'Y'),('MEDIUM6',2,'Y'),('HARD6',3,'Y'),
+           ('EASY7',1,'Y'),('MEDIUM7',2,'Y'),('HARD7',3,'Y'),
+           ('EASY8',1,'Y'),('MEDIUM8',2,'Y'),('HARD8',3,'Y'),
+           ('EASY9',1,'Y'),('MEDIUM9',2,'Y'),('HARD9',3,'Y'),
+           ('EASY10',1,'Y'),('MEDIUM10',2,'Y'),('HARD10',3,'Y')]
+questions_attempted=[]
+random_elist=[]
+random_mlist=[]
+random_hlist=[]
+esy=[]
+med=[]
+hrd=[]
+user_score_e=[]
+user_score_m=[]
+user_score_h=[]
+for i in questions:
+    if i[1]==1:
+        esy.append([i[0]]+[i[2]])
+    elif i[1]==2:
+        med.append([i[0]]+[i[2]])
+    else:
+        hrd.append([i[0]]+[i[2]])
+from tkinter import *
+from random import *
+def easy(number):
+    def submite():
+        ans=easyv.get().upper()
+        questions_attempted[-1]+=[ans]
+        if ans==que[1]: 
+            user_score_e.append(1)
+            n.append(1)
+        else:
+            user_score_e.append(0)
+        win.destroy()
+    n=[0]
+    win=Tk()
+    win.title('QUIZ')
+    win.attributes('-fullscreen',True)
+    index=randint(0,9)
+    while index in random_elist:
+        index=randint(0,9)
+    que=esy[index]
+    random_elist.append(index)
+    questions_attempted.append(esy[index])
+    Label(win,text='QUESTION '+str(number)+".").pack(pady=20)
+    Label(win,text=que[0]).pack(pady=20)
+    easyv=StringVar()
+    Entry(win,textvariable=easyv).pack(pady=20)
+    Button(win,text='SUBMIT',command=submite).pack(pady=20)
+    win.mainloop()
+    return n[-1]
+def medium(number):
+    def submitm():
+        ans=mediumv.get().upper()
+        questions_attempted[-1]+=[ans]
+        if ans==que[1]: 
+            user_score_m.append(1)
+            n.append(1)
+        else:
+            user_score_m.append(0)
+        win.destroy()
+    n=[0]
+    win=Tk()
+    win.title('QUIZ')
+    win.attributes('-fullscreen',True)
+    index=randint(0,9)
+    while index in random_mlist:
+        index=randint(0,9)
+    que=med[index]
+    random_mlist.append(index)
+    questions_attempted.append(med[index])
+    Label(win,text='QUESTION '+str(number)+".").pack(pady=20)
+    Label(win,text=que[0]).pack(pady=20)
+    mediumv=StringVar()
+    Entry(win,textvariable=mediumv).pack(pady=20)
+    Button(win,text='SUBMIT',command=submitm).pack(pady=20)
+    win.mainloop()
+    return n[-1]
+def hard(number):
+    def submith():
+        ans=hardv.get().upper()
+        questions_attempted[-1]+=[ans]
+        if ans==que[1]:
+            user_score_h.append(1)
+            n.append(1)
+        else:
+            user_score_h.append(0)
+        win.destroy()
+    n=[0]
+    win=Tk()
+    win.title('QUIZ')
+    win.attributes('-fullscreen',True)
+    index=randint(0,9)
+    while index in random_hlist:
+        index=randint(0,9)
+    que=hrd[index]
+    random_hlist.append(index)
+    questions_attempted.append(hrd[index])
+    Label(win,text='QUESTION '+str(number)+".").pack(pady=20)
+    Label(win,text=que[0]).pack(pady=20)
+    hardv=StringVar()
+    Entry(win,textvariable=hardv).pack(pady=20)
+    Button(win,text='SUBMIT',command=submith).pack(pady=20)
+    win.mainloop()
+    return n[-1]
+def begin():
+    check.append(1)
+    win.destroy()
+check=[0]
+win=Tk()
+win.title('QUIZ')
+win.attributes('-fullscreen',True)
+win.attributes('-fullscreen',True)
+Label(win,text='QUIZ CANNOT BE EXITED ONCE STARTED.').pack(pady=20)
+Label(win,text='YOU CAN EXIT NOW IF YOU WANT TO.').pack(pady=20)
+Button(win,text='BEGIN',command=begin).pack(pady=20)
+Button(win,text='QUIT',command=win.destroy).pack(pady=20)
+win.mainloop()
+if check[-1]:
+    one=medium(1)
+    two=medium(2)
+    if one and two:
+        three=hard(3)
+        four=hard(4)
+        if three and four:
+            five=hard(5)
+            six=hard(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            else:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        elif three or four:
+            five=hard(5)
+            six=hard(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            else:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        else:
+            five=medium(5)
+            six=medium(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                elif seven or eight:
+                    nine=easy(9)
+                    ten=easy(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+    elif one or two:
+        three=medium(3)
+        four=medium(4)
+        if three and four:
+            five=hard(5)
+            six=hard(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            else:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        elif three or four:
+            five=medium(5)
+            six=medium(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                elif seven or eight:
+                    nine=easy(9)
+                    ten=easy(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        else:
+            five=easy(5)
+            six=easy(6)
+            if five and six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            elif five or six:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+    else:
+        three=easy(3)
+        four=easy(4)
+        if three and four:
+            five=medium(5)
+            six=medium(6)
+            if five and six:
+                seven=hard(7)
+                eight=hard(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                else:
+                    nine=medium(9)
+                    ten=medium(10)
+            elif five or six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        elif three or four:
+            five=easy(5)
+            six=easy(6)
+            if five and six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            elif five or six:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+        else:
+            five=easy(5)
+            six=easy(6)
+            if five and six:
+                seven=medium(7)
+                eight=medium(8)
+                if seven and eight:
+                    nine=hard(9)
+                    ten=hard(10)
+                elif seven or eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            elif five or six:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+            else:
+                seven=easy(7)
+                eight=easy(8)
+                if seven and eight:
+                    nine=medium(9)
+                    ten=medium(10)
+                else:
+                    nine=easy(9)
+                    ten=easy(10)
+    win2=Tk()
+    win2.title('RESULT')
+    win2.attributes('-fullscreen',True)
+    Label(win2,text='THANKYOU FOR TAKING THIS QUIZ.\n\n\n YOUR RESULTS ARE AS FOLLOWS : ').pack(pady=20)
+    esyatt=0
+    medatt=0
+    hrdatt=0
+    esyc=0
+    medc=0
+    hrdc=0
+    esyi=0
+    medi=0
+    hrdi=0
+    for i in user_score_e:
+        esyatt+=1
+        if i:
+            esyc+=1
+        else:
+            esyi+=1
+    for i in user_score_m:
+        medatt+=1
+        if i:
+            medc+=1
+        else:
+            medi+=1
+    for i in user_score_h:
+        hrdatt+=1
+        if i:
+            hrdc+=1
+        else:
+            hrdi+=1
+    def analyse():
+        try:
+            win2.destroy()
+        except:
+            pass
+        lst_helper=[1]
+        win4=Tk()
+        win4.attributes('-fullscreen',True)
+        Label(win4,text='EASY ATTEMPTED : '+str(esyatt)).pack(pady=20)
+        Label(win4,text='EASY CORRECT : '+str(esyc)).pack(pady=20)
+        Label(win4,text='EASY INCORRECT : '+str(esyi)).pack(pady=20)
+        Label(win4,text='MEDIUM ATTEMPTED : '+str(medatt)).pack(pady=20)
+        Label(win4,text='MEDIUM CORRECT : '+str(medc)).pack(pady=20)
+        Label(win4,text='MEDIUM INCORRECT : '+str(medi)).pack(pady=20)
+        Label(win4,text='HARD ATTEMPTED : '+str(hrdatt)).pack(pady=20)
+        Label(win4,text='HARD CORRECT : '+str(hrdc)).pack(pady=20)
+        Label(win4,text='HARD INCORRECT : '+str(hrdi)).pack(pady=20)
+        Button(win4,text='QUESTIONWISE ANALYSIS',command=win4.destroy).pack(pady=20)
+        def analysemainquit():
+            win4.destroy()
+            lst_helper.append(0)
+        Button(win4,text='QUIT',command=analysemainquit).pack(pady=20)
+        win4.mainloop()
+        if lst_helper[-1]:
+            toquit=[1]
+            j=0
+            while j<len(questions_attempted) and toquit[-1]:
+                i=questions_attempted[j]
+                win=Tk()
+                win.title('PAPER ANALYSIS')
+                toquitl=[0]
+                win.attributes('-fullscreen',True)
+                num=j+1
+                Label(win,text='QUESTION '+str(num)+'.').pack(pady=20)
+                Label(win,text='QUESTION : ').pack(pady=20)
+                Label(win,text=i[0]).pack(pady=20)
+                Label(win,text='CORRECT ANSWER : ').pack(pady=20)
+                Label(win,text=i[1]).pack(pady=20)
+                Label(win,text='YOUR ANSWER : ').pack(pady=20)
+                Label(win,text=i[2]).pack(pady=20)
+                Button(win,text='NEXT',command=win.destroy).pack(pady=20)
+                def toquitf():
+                    win.destroy()
+                    toquit.append(0)
+                Button(win,text='QUIT',command=toquitf).pack(pady=20)
+                win.mainloop()
+                j+=1
+        try:
+            if toquit[-1]:
+                analyse()
+        except:
+            None
+    score=(1*esyc)+(2*medc)+(3*hrdc)
+    Label(win2,text='TOTAL SCORE : '+str(score)).pack(pady=20)
+    Button(win2,text='OK',command=win2.destroy).pack(pady=20)
+    Button(win2,text='PAPER ANALYSIS',command=analyse).pack(pady=20)
+    win2.mainloop()
+else:
+    pass
