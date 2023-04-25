@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body background="https://picsum.photos/5000/3000">
+    <br><br><br><br><br><br><br><br><br><br>
+    <table align="center" cellpadding="10" cellspacing="5" border="5" height="200">
+        <tr>
+            <td>
+                <input type="text" name="first_name" placeholder="First Name" required="required" />
+            </td>
+            <td>
+                <input type="text" name="Last_name" placeholder="Last Name" required="required" />
+            </td>
+        </tr>
+        <tr>
+            <td><input type="email" name="email" placeholder="Email" required="required" /></td>
+            <td><input type="text" name="subject" placeholder="Subject" required="required" /></td>
+        </tr>
+        <tr>
+            <th colspan="20">
+                <textarea placeholder="Enter Message" required=""></textarea>
+            </th>
+        </tr>
+        <tr>
+            <th colspan="20">
+                <input type="submit" name="contact-submit" value="SEND">
+            </th>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
