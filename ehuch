@@ -1,0 +1,82 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		beautiful and simple website using html only -- fullywrold web tutorials
+	</title>
+</head>
+<body background="https://picsum.photos/1920/2950" link="#000" alink="#017bf5" vlink="#000">
+			<div><div class="main" id="home">
+			<br />
+			<h3 align="center">
+				<font face="sans-serif" size="6" color="#2c3e50">LOGO</font>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<font face="sans" size="4">
+					<a href="#home">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="#">VIDEOS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="#">PORTFOLIO</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="#">BLOG</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="#">CONTACT US</a>
+				</font>
+			</h3>
+			<br /><br /><br /><br /><br /><br /><br /><br /><br><br><br>
+			<h1 align="center">
+				<font face="sans-serif" color="#2980b9" size="7">
+				SIMPLE AND ONE PAGE WEBSITE
+				</font>
+			</h1>
+			<h3 align="center">
+				<font face="Lato" color="#000" size="5">
+					USING HTML ONLY (NO CSS USED)
+				</font>
+			</h3>
+			<br />
+			<h3 align="center">
+			<a href="#">
+				<font face="Lato" color="#000">GET STARTED</font>
+			</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#">
+				<font face="Lato" color="#f00">SUBSCRIBE US</font>
+			</a>
+			</h3>
+		</div>
+		<br><br><br><br><br><br>
+		<br><br><br><br><br><br>
+		<center>  <iframe width="900" height="515" src="https://www.youtube.com/embed/t5akgsQsOSk" frameborder="0" allowfullscreen></iframe>
+		    <div style="text-align:center;">
+				<br><br><br><br><br><br>
+				<iframe src="samplearticles.html" width="1200" height="600"></iframe>
+			  </div>
+		</center>
+		<h3 align ="center">video info</h3>
+		<br><br><br><br><br><br>
+			<br><br>
+				<div class="portfolio">
+					<hr color="#000" width="20%">
+						<p align="center"><font face="sans-serif" color="#2ecc17" size="5.5">INFORMATION</font></p>
+					<hr color="#000" width="20%">
+					<br><br>
+					<h1><font face="sans" size="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magnam atque, veritatis inventore nam quae. Explicabo facilis fugit voluptatem sed ex, magnam placeat vero cupiditate dolorum qui? Adipisci, molestiae! Molestias dignissimos quasi minus id dolore perspiciatis, sapiente nihil facilis! Quidem soluta delectus id, obcaecati expedita deleniti exercitationem ratione aperiam eveniet, atque quasi blanditiis sunt iste harum incidunt illo vero eum culpa, omnis ipsam? Obcaecati unde optio neque saepe architecto eos dicta quasi numquam incidunt error veritatis cumque blanditiis eaque amet, nihil ad aspernatur et deserunt non at vel officia. Aspernatur exercitationem possimus dolores, dolor cum modi. Accusamus alias similique mollitia assumenda aperiam unde vel aliquid praesentium distinctio magnam, incidunt et ad deleniti maxime rem tempora molestias natus labore sint a dicta sequi sit recusandae? Error a et numquam, beatae, debitis inventore veniam tempore at explicabo tenetur natus, nam deserunt magnam fuga laudantium ex blanditiis vel pariatur asperiores tempora rem eaque minus facilis. Distinctio deleniti sunt corporis quod ab nobis laudantium qui dicta quam magnam vitae impedit inventore perspiciatis illo et iusto animi hic, ad ipsa? Voluptatem accusamus necessitatibus quis? Nobis eaque, illum cum ipsum soluta ratione porro facilis quos ipsa maxime obcaecati autem aliquid molestiae sed at, omnis facere quidem!</h3>
+						<br><br><br><br><br><br><br><br>
+		<hr color="#000">
+		<p align="center">
+			<a href="#"><font face="sans-serif" size="7" color="#f00">LOGO</font></a>
+		</p>
+		<p align="center">
+			<font face="sans-serif" size="4" color="#000">
+				made by kabir house
+			</font>
+		</p>
+	</div>
+
+</body>
+</html>
