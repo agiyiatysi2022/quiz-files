@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body bgcolor="">
+  <center><table cellpadding="10" width="500px">
+    <tr bgcolor="#000">
+      <th><font color="#fff">xxx</th>
+      <th><font color="#fff">xxx</th>
+      <th><font color="#fff">xxx</th>
+      <th><font color="#fff">xxx</th>
+    </tr>
+    <tr bgcolor="#e6f7ff">
+      <td>yyy</td>
+      <td>yyy</td>
+      <td>yyy</td>
+      <td>yyy</td>
+
+
+
+    </tr>
+    <tr bgcolor="#b3e7ff">
+      <td>zzz</td>
+      <td>zzz</td>
+      <td>zzz</td>
+      <td>zzz</td>
+
+
+
+    </tr>
+    <tr bgcolor="#e6f7ff">
+      <td>aaa</td>
+      <td>aaa</td>
+      <td>aaa</td>
+      <td>aaa</td>
+
+
+
+    </tr>
+    <tr bgcolor="#b3e7ff">
+      <td>fff</td>
+      <td>fff</td>
+      <td>fff</td>
+      <td>fff</td>
+
+      
+
+    </tr>
+  </table></center>
+</body>
+</html>
