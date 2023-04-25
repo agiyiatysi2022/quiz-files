@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Article Page</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>Article Title</h1>
+      <h4>Published on April 25, 2023</h4>
+      <br>
+      <img src="https://picsum.photos/300/300" alt="Article Image">
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor ligula quis augue convallis facilisis. In pharetra odio sit amet purus imperdiet lobortis. Fusce semper, quam eget euismod dictum, nulla dolor vestibulum enim, a interdum justo mauris id sem. Nam ultricies elit at velit ultricies, eu maximus nisi volutpat. Etiam condimentum elit eget elit imperdiet tincidunt. Mauris bibendum, turpis sed consectetur tincidunt, nisi augue eleifend sapien, quis fringilla sapien diam sit amet dui.</p>
+      <p>Proin a eros sit amet metus sollicitudin laoreet eu et urna. Nullam a magna tincidunt, malesuada sapien non, feugiat felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce varius, mauris nec ullamcorper vestibulum, nulla purus lobortis urna, id lobortis mi velit ut velit. Fusce lobortis aliquet purus, a elementum elit tincidunt nec. Duis vel mauris lorem. Nam bibendum imperdiet urna, ut tincidunt leo semper vel.</p>
+      <p>Donec scelerisque magna enim, quis pulvinar justo viverra ac. Sed commodo lectus sit amet est imperdiet, vel pretium quam maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed venenatis enim vel quam pretium faucibus. Sed sodales eu quam id commodo. Proin aliquet, velit vitae interdum pharetra, felis mauris malesuada mauris, vel faucibus massa sapien eu nulla. Praesent commodo lacinia dui, eget aliquet dolor laoreet vel.</p>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor ligula quis augue convallis facilisis. In pharetra odio sit amet purus imperdiet lobortis. Fusce semper, quam eget euismod dictum, nulla dolor vestibulum enim, a interdum justo mauris id sem. Nam ultricies elit at velit ultricies, eu maximus nisi volutpat. Etiam condimentum elit eget elit imperdiet tincidunt. Mauris bibendum, turpis sed consectetur tincidunt, nisi augue eleifend sapien, quis fringilla sapien diam sit amet dui.</p>
+      <p>Proin a eros sit amet metus sollicitudin laoreet eu et urna. Nullam a magna tincidunt, malesuada sapien non, feugiat felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce varius, mauris nec ullamcorper vestibulum, nulla purus lobortis urna, id lobortis mi velit ut velit. Fusce lobortis aliquet purus, a elementum elit tincidunt nec. Duis vel mauris lorem. Nam bibendum imperdiet urna, ut tincidunt leo semper vel.</p>
+      <p>Donec scelerisque magna enim, quis pulvinar justo viverra ac. Sed commodo lectus sit amet est imperdiet, vel pretium quam maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed venenatis enim vel quam pretium faucibus. Sed sodales eu quam id commodo. Proin aliquet, velit vitae interdum pharetra, felis mauris malesuada mauris, vel faucibus massa sapien eu nulla. Praesent commodo lacinia dui, eget aliquet dolor laoreet vel.</p>
+	</center>
+  </body>
+</html>
