@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>Photo Gallery</title>
+</head>
+<body>
+    <br><br>
+	<center><h1>Photo Gallery</h1></center>
+    <br><br>
+	<center><table cellspacing="10" cellpadding="10" border="1" bgcolor = "lightblue">
+		<tr>
+			<td>
+				<a href="https://picsum.photos/id/1/300/300">
+					<img src="https://picsum.photos/id/1/300/300" alt="Photo 1" >
+				</a>
+			</td>
+			<td>
+				<a href="https://picsum.photos/id/2/300/300">
+					<img src="https://picsum.photos/id/2/300/300" alt="Photo 2">
+				</a>
+			</td>
+			<td>
+				<a href="https://picsum.photos/id/3/300/300">
+					<img src="https://picsum.photos/id/3/300/300" alt="Photo 3">
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="https://picsum.photos/id/4/300/300">
+					<img src="https://picsum.photos/id/4/300/300" alt="Photo 4">
+				</a>
+			</td>
+			<td>
+				<a href="https://picsum.photos/id/5/300/300">
+					<img src="https://picsum.photos/id/5/300/300" alt="Photo 5">
+				</a>
+			</td>
+			<td>
+				<a href="https://picsum.photos/id/6/300/300">
+					<img src="https://picsum.photos/id/6/300/300" alt="Photo 6">
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="https://picsum.photos/id/7/300/300">
+					<img src="https://picsum.photos/id/7/300/300" alt="Photo 7">
+				</a>
+			</td>
+			<td>
+				<a href="https://picsum.photos/id/8/300/300">
+					<img src="https://picsum.photos/id/8/300/300" alt="Photo 8">
+				</a>
+			</td>
+			<td>
+				<a href="https://picsum.photos/id/9/300/300">
+					<img src="https://picsum.photos/id/9/300/300" alt="Photo 9">
+				</a>
+			</td>
+		</tr>
+        <tr>
+			<td>
+				<a href="https://picsum.photos/id/7/300/300">
+					<img src="https://picsum.photos/id/7/300/300" alt="Photo 7">
+				</a>
+			</td>
+			<td>
+				<a href="https://picsum.photos/id/8/300/300">
+					<img src="https://picsum.photos/id/8/300/300" alt="Photo 8">
+				</a>
+			</td>
+			<td>
+				<a href="https://picsum.photos/id/9/300/300">
+					<img src="https://picsum.photos/id/9/300/300" alt="Photo 9">
+				</a>
+			</td>
+		</tr>
+	</table></center>
+    <br><br><br><br>
+</body>
+</html>
